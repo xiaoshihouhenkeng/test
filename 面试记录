@@ -1,0 +1,27 @@
+#面试记录
+=========
+##由若干个0,1组成的字符串数组,如["01","101","1010"],现有m个0和n个1,每个字符只能又一次,共可以组成多少数组中字符串
+=========================================================================================================
+ function fn(arr,m,n){
+        var arrs=[];
+        for(var i= 0,len=arr.length;i<len;i++){
+            arrs.push(arr[i].split(""))
+        }
+        var num=0;
+        for(var t=0;t<arrs.length;t++){
+            var a0=0;
+            var a1=0;
+            for(var j=0;j<arrs[t].length;j++){
+                if(arrs[t][j]==0){
+                    a0++;
+                }
+                else{
+                    a1++;
+                }
+            }
+            if(a0<=m&&a1<=n){
+                num++;
+            }
+        }
+        return num;
+    }

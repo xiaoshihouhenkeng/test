@@ -1,0 +1,16 @@
+#4.18
+=========
+<canvas></canvas>
+需调用getContex()方法
+var drawing=document.getElementById("drawing");
+ var oDiv=document.getElementById("div1")
+ if(drawing.getContext){
+     var context=drawing.getContext("2d");
+     context.strokeStyle="red";
+     context.fillStyle="blue";
+     context.beginPath();
+     context.arc(70,70,50,0,2*Math.PI,false);
+     context.moveTo(140,70);//绘制点已到140,70处
+     context.arc(70,70,70,0,2*Math.PI,false);
+     context.stroke()
+ }//在圆心(70,70)处绘制半径分别为50,70同心圆

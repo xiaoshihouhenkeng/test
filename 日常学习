@@ -14,3 +14,28 @@ var drawing=document.getElementById("drawing");
      context.arc(70,70,70,0,2*Math.PI,false);
      context.stroke()
  }//在圆心(70,70)处绘制半径分别为50,70同心圆
+ 实现一个球在环处运动
+ function round(x,y,r){
+ }
+ var x=70;
+ var y=70;
+ var r=50+10;//(内圆半径加上1/2div宽)
+ var num=0;
+setInterval(function(){
+     num++;
+     var a=Math.sin(num*Math.PI/180)*r;
+     var b=Math.cos(num*Math.PI/180)*r;
+     oDiv.style.left=x+b-10+"px";//由球中心点转换div左上角x坐标
+     oDiv.style.top=y+a-10+"px";//由球中心点转换div左上角y坐标
+ },16.7)};
+ ======
+ css
+ 
+ *{margin: 0;padding: 0}
+        #div1{width:20px;height:20px;position: absolute;background: #52a9ff;left:120px;top:60px
+        ;border-radius: 50%}
+        .div2{background: blue;position: absolute;width: 20px;height: 20px;border-radius: 50%}
+        
+ html
+<div id="div1"></div>
+<canvas width="400px" height="400px" id="drawing"></canvas>
